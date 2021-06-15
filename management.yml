@@ -1,0 +1,21 @@
+---
+
+- name: management nodes
+  hosts: ubuntu
+  gather_facts: false
+  become: yes 
+  become_user: root
+  become_method: sudo
+  vars_files:
+    hosts_credentials.yml
+
+  tasks:
+
+          - name: apt
+            raw: apt update         
+
+          - name: apt
+            raw: apt -y install mc net-tools ansible python3 python3-pip docker docker-compose
+
+          - name: timezone
+            raw: timedatectl set-timezone "Europe/Moscow"
