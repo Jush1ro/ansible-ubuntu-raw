@@ -12,7 +12,7 @@
   tasks:
 
           - name: apt
-            raw: apt update         
+            raw: apt -y update         
 
           - name: apt
             raw: apt -y install mc net-tools ansible python3 python3-pip docker docker-compose
